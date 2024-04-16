@@ -1,0 +1,40 @@
+﻿<Page x:Class="WpfApp1.page.auth"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="auth">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+
+        <TextBox Grid.Row="0" Grid.Column="1" Name="Txb" TextWrapping="Wrap" ToolTip="Укажите свой логин"  VerticalAlignment="Center" TextChanged="Txb_TextChanged" Width="93" Height="19"/>
+        <ComboBox Name="CmbRole" SelectedIndex="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Width="92">
+            <TextBlock>участник</TextBlock>
+            <TextBlock>организатор</TextBlock>
+            <TextBlock>модератор</TextBlock>
+            <TextBlock>жюри</TextBlock>
+        </ComboBox>
+        <TextBlock Grid.Row="0" Grid.Column="1" IsHitTestVisible="False" Text="Логин или почта" Foreground="Gray" Name="txtHintLogin"  VerticalAlignment="Center" Width="93" HorizontalAlignment="Center" Height="19"/>
+        <PasswordBox Grid.Row="1" Grid.Column="1" Name="PBox" PasswordChanged="PasswordBox_PasswordChanged" ToolTip="Укажите свой пароль" Width="93" Height="19"/>
+        <TextBlock Grid.Row="1" IsHitTestVisible="False" Grid.Column="1" Text="Пароль" Foreground="Gray" Name="txtHintPassword" VerticalAlignment="Center" Width="44" HorizontalAlignment="Center" Height="21"/>
+        <TextBlock Grid.Row="0"  Grid.Column="1" HorizontalAlignment="left" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Center" Height="19" Width="76"/>
+        <TextBlock Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Center" Height="19" Width="77"/>
+
+        <Button Grid.Row="2" Grid.Column="1" Content="Вход" ToolTip="Зайти в систему" HorizontalAlignment="Center"  Background="White" VerticalAlignment="top" Width="154" Click="Button_Click_1"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Регистрация" ToolTip="Перейти на панель регистрации" HorizontalAlignment="Center" VerticalAlignment="Center" Width="154"  Background="White" Height="21" Click="Button_Click"/>
+    </Grid>
+</Page>

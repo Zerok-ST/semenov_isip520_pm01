@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище СеменовModelContainer" CdmEntityContainer="Entities2">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="СеменовModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="жюри">
+      <EntityTypeMapping TypeName="СеменовModel.жюри">
+        <MappingFragment StoreEntitySet="жюри">
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="пол" ColumnName="пол" />
+          <ScalarProperty Name="почта" ColumnName="почта" />
+          <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+          <ScalarProperty Name="страна" ColumnName="страна" />
+          <ScalarProperty Name="телефон" ColumnName="телефон" />
+          <ScalarProperty Name="направление" ColumnName="направление" />
+          <ScalarProperty Name="пароль" ColumnName="пароль" />
+          <ScalarProperty Name="фото" ColumnName="фото" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="меропр_ИнфБез">
+      <EntityTypeMapping TypeName="СеменовModel.меропр_ИнфБез">
+        <MappingFragment StoreEntitySet="меропр_ИнфБез">
+          <ScalarProperty Name="C_" ColumnName="№" />
+          <ScalarProperty Name="событие" ColumnName="событие" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="город" ColumnName="город" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="модераторы">
+      <EntityTypeMapping TypeName="СеменовModel.модераторы">
+        <MappingFragment StoreEntitySet="модераторы">
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="пол" ColumnName="пол" />
+          <ScalarProperty Name="почта" ColumnName="почта" />
+          <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+          <ScalarProperty Name="страна" ColumnName="страна" />
+          <ScalarProperty Name="телефон" ColumnName="телефон" />
+          <ScalarProperty Name="направление" ColumnName="направление" />
+          <ScalarProperty Name="мероприятие" ColumnName="мероприятие" />
+          <ScalarProperty Name="пароль" ColumnName="пароль" />
+          <ScalarProperty Name="фото" ColumnName="фото" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="организаторы">
+      <EntityTypeMapping TypeName="СеменовModel.организаторы">
+        <MappingFragment StoreEntitySet="организаторы">
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="почта" ColumnName="почта" />
+          <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+          <ScalarProperty Name="страна" ColumnName="страна" />
+          <ScalarProperty Name="телефон" ColumnName="телефон" />
+          <ScalarProperty Name="пароль" ColumnName="пароль" />
+          <ScalarProperty Name="фото" ColumnName="фото" />
+          <ScalarProperty Name="пол" ColumnName="пол" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="страны">
+      <EntityTypeMapping TypeName="СеменовModel.страны">
+        <MappingFragment StoreEntitySet="страны">
+          <ScalarProperty Name="название" ColumnName="название" />
+          <ScalarProperty Name="названиеАнгл" ColumnName="названиеАнгл" />
+          <ScalarProperty Name="код" ColumnName="код" />
+          <ScalarProperty Name="код2" ColumnName="код2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="участники">
+      <EntityTypeMapping TypeName="СеменовModel.участники">
+        <MappingFragment StoreEntitySet="участники">
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="почта" ColumnName="почта" />
+          <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+          <ScalarProperty Name="страна" ColumnName="страна" />
+          <ScalarProperty Name="телефон" ColumnName="телефон" />
+          <ScalarProperty Name="пароль" ColumnName="пароль" />
+          <ScalarProperty Name="фото" ColumnName="фото" />
+          <ScalarProperty Name="пол" ColumnName="пол" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

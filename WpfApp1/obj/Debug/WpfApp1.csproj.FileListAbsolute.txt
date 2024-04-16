@@ -1,0 +1,13 @@
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\auth.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\juryProf.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\moderProf.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\org.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\orgProf.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\partProf.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\page\regPage.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\208557\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="СеменовModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="жюри">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="пол" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="направление" />
+      <PropertyRef Name="пароль" />
+    </Key>
+    <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="страна" Type="Int32" Nullable="false" />
+    <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="направление" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="меропр_ИнфБез">
+    <Key>
+      <PropertyRef Name="C_" />
+      <PropertyRef Name="событие" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="days" />
+      <PropertyRef Name="город" />
+    </Key>
+    <Property Name="C_" Type="Int32" Nullable="false" />
+    <Property Name="событие" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="days" Type="Int32" Nullable="false" />
+    <Property Name="город" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="модераторы">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="пол" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="направление" />
+      <PropertyRef Name="мероприятие" />
+      <PropertyRef Name="пароль" />
+    </Key>
+    <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="страна" Type="Int32" Nullable="false" />
+    <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="направление" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="мероприятие" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="организаторы">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="пароль" />
+      <PropertyRef Name="пол" />
+    </Key>
+    <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="страна" Type="Int32" Nullable="false" />
+    <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="страны">
+    <Key>
+      <PropertyRef Name="название" />
+      <PropertyRef Name="названиеАнгл" />
+      <PropertyRef Name="код" />
+      <PropertyRef Name="код2" />
+    </Key>
+    <Property Name="название" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="названиеАнгл" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="код" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="код2" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="участники">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="пароль" />
+      <PropertyRef Name="пол" />
+    </Key>
+    <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="страна" Type="Int32" Nullable="false" />
+    <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="жюри" EntityType="Self.жюри" />
+    <EntitySet Name="меропр_ИнфБез" EntityType="Self.меропр_ИнфБез" />
+    <EntitySet Name="модераторы" EntityType="Self.модераторы" />
+    <EntitySet Name="организаторы" EntityType="Self.организаторы" />
+    <EntitySet Name="страны" EntityType="Self.страны" />
+    <EntitySet Name="участники" EntityType="Self.участники" />
+  </EntityContainer>
+</Schema>

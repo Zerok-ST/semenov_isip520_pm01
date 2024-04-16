@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище СеменовModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "520Семенов.dbo.город" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="город">
+          <Property Name="номер" Type="int" />
+          <Property Name="герб" Type="image" />
+          <Property Name="название" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.жюри" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="жюри">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="пол" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="направление" />
+      <PropertyRef Name="пароль" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="дата_рождения" Type="date" Nullable="false" />
+    <Property Name="страна" Type="int" Nullable="false" />
+    <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="направление" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="фото" Type="image" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.меропр_ИнфБез" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="меропр_ИнфБез">
+    <Key>
+      <PropertyRef Name="№" />
+      <PropertyRef Name="событие" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="days" />
+      <PropertyRef Name="город" />
+    </Key>
+    <Property Name="№" Type="int" Nullable="false" />
+    <Property Name="событие" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="days" Type="int" Nullable="false" />
+    <Property Name="город" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.модераторы" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="модераторы">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="пол" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="направление" />
+      <PropertyRef Name="мероприятие" />
+      <PropertyRef Name="пароль" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="дата_рождения" Type="datetime" Nullable="false" />
+    <Property Name="страна" Type="int" Nullable="false" />
+    <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="направление" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="мероприятие" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="фото" Type="image" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.организаторы" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="организаторы">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="пароль" />
+      <PropertyRef Name="пол" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="дата_рождения" Type="datetime" Nullable="false" />
+    <Property Name="страна" Type="int" Nullable="false" />
+    <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="фото" Type="image" />
+    <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.страны" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="страны">
+    <Key>
+      <PropertyRef Name="название" />
+      <PropertyRef Name="названиеАнгл" />
+      <PropertyRef Name="код" />
+      <PropertyRef Name="код2" />
+    </Key>
+    <Property Name="название" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="названиеАнгл" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="код" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="код2" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.участники" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="участники">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="почта" />
+      <PropertyRef Name="дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="пароль" />
+      <PropertyRef Name="пол" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="дата_рождения" Type="datetime" Nullable="false" />
+    <Property Name="страна" Type="int" Nullable="false" />
+    <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="фото" Type="image" />
+    <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище СеменовModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="жюри" EntityType="Self.жюри" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[жюри].[ФИО] AS [ФИО], 
+[жюри].[пол] AS [пол], 
+[жюри].[почта] AS [почта], 
+[жюри].[дата_рождения] AS [дата_рождения], 
+[жюри].[страна] AS [страна], 
+[жюри].[телефон] AS [телефон], 
+[жюри].[направление] AS [направление], 
+[жюри].[пароль] AS [пароль], 
+[жюри].[фото] AS [фото]
+FROM [dbo].[жюри] AS [жюри]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="меропр_ИнфБез" EntityType="Self.меропр_ИнфБез" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[меропр_ИнфБез].[№] AS [№], 
+[меропр_ИнфБез].[событие] AS [событие], 
+[меропр_ИнфБез].[date] AS [date], 
+[меропр_ИнфБез].[days] AS [days], 
+[меропр_ИнфБез].[город] AS [город]
+FROM [dbo].[меропр_ИнфБез] AS [меропр_ИнфБез]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="модераторы" EntityType="Self.модераторы" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[модераторы].[ФИО] AS [ФИО], 
+[модераторы].[пол] AS [пол], 
+[модераторы].[почта] AS [почта], 
+[модераторы].[дата_рождения] AS [дата_рождения], 
+[модераторы].[страна] AS [страна], 
+[модераторы].[телефон] AS [телефон], 
+[модераторы].[направление] AS [направление], 
+[модераторы].[мероприятие] AS [мероприятие], 
+[модераторы].[пароль] AS [пароль], 
+[модераторы].[фото] AS [фото]
+FROM [dbo].[модераторы] AS [модераторы]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="организаторы" EntityType="Self.организаторы" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[организаторы].[ФИО] AS [ФИО], 
+[организаторы].[почта] AS [почта], 
+[организаторы].[дата_рождения] AS [дата_рождения], 
+[организаторы].[страна] AS [страна], 
+[организаторы].[телефон] AS [телефон], 
+[организаторы].[пароль] AS [пароль], 
+[организаторы].[фото] AS [фото], 
+[организаторы].[пол] AS [пол]
+FROM [dbo].[организаторы] AS [организаторы]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="страны" EntityType="Self.страны" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[страны].[название] AS [название], 
+[страны].[названиеАнгл] AS [названиеАнгл], 
+[страны].[код] AS [код], 
+[страны].[код2] AS [код2]
+FROM [dbo].[страны] AS [страны]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="участники" EntityType="Self.участники" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[участники].[ФИО] AS [ФИО], 
+[участники].[почта] AS [почта], 
+[участники].[дата_рождения] AS [дата_рождения], 
+[участники].[страна] AS [страна], 
+[участники].[телефон] AS [телефон], 
+[участники].[пароль] AS [пароль], 
+[участники].[фото] AS [фото], 
+[участники].[пол] AS [пол]
+FROM [dbo].[участники] AS [участники]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

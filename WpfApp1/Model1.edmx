@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище СеменовModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "520Семенов.dbo.city" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="city">
+          <Property Name="номер" Type="int" />
+          <Property Name="герб" Type="image" />
+          <Property Name="название" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.contry" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="contry">
+          <Key>
+            <PropertyRef Name="название" />
+            <PropertyRef Name="названиеАнгл" />
+            <PropertyRef Name="код" />
+            <PropertyRef Name="код2" />
+          </Key>
+          <Property Name="название" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="названиеАнгл" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="код" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="код2" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.event" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="№" />
+            <PropertyRef Name="событие" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="days" />
+            <PropertyRef Name="город" />
+          </Key>
+          <Property Name="№" Type="int" Nullable="false" />
+          <Property Name="событие" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="days" Type="int" Nullable="false" />
+          <Property Name="город" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.juri" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="juri">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="пол" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="направление" />
+            <PropertyRef Name="пароль" />
+          </Key>
+          <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="дата_рождения" Type="date" Nullable="false" />
+          <Property Name="страна" Type="int" Nullable="false" />
+          <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="направление" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="фото" Type="image" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.moder" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="moder">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="пол" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="направление" />
+            <PropertyRef Name="мероприятие" />
+            <PropertyRef Name="пароль" />
+          </Key>
+          <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="дата_рождения" Type="datetime" Nullable="false" />
+          <Property Name="страна" Type="int" Nullable="false" />
+          <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="направление" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="мероприятие" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="фото" Type="image" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.organ" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="organ">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="пароль" />
+            <PropertyRef Name="пол" />
+          </Key>
+          <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="дата_рождения" Type="datetime" Nullable="false" />
+          <Property Name="страна" Type="int" Nullable="false" />
+          <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="фото" Type="image" />
+          <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "520Семенов.dbo.participant" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="participant">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="пароль" />
+            <PropertyRef Name="пол" />
+          </Key>
+          <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="дата_рождения" Type="datetime" Nullable="false" />
+          <Property Name="страна" Type="int" Nullable="false" />
+          <Property Name="телефон" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="фото" Type="image" />
+          <Property Name="пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="Хранилище СеменовModelContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contry" EntityType="Self.contry" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[contry].[название] AS [название], 
+[contry].[названиеАнгл] AS [названиеАнгл], 
+[contry].[код] AS [код], 
+[contry].[код2] AS [код2]
+FROM [dbo].[contry] AS [contry]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="event" EntityType="Self.event" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[event].[№] AS [№], 
+[event].[событие] AS [событие], 
+[event].[date] AS [date], 
+[event].[days] AS [days], 
+[event].[город] AS [город]
+FROM [dbo].[event] AS [event]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="juri" EntityType="Self.juri" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[juri].[ФИО] AS [ФИО], 
+[juri].[пол] AS [пол], 
+[juri].[почта] AS [почта], 
+[juri].[дата_рождения] AS [дата_рождения], 
+[juri].[страна] AS [страна], 
+[juri].[телефон] AS [телефон], 
+[juri].[направление] AS [направление], 
+[juri].[пароль] AS [пароль], 
+[juri].[фото] AS [фото]
+FROM [dbo].[juri] AS [juri]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="moder" EntityType="Self.moder" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[moder].[ФИО] AS [ФИО], 
+[moder].[пол] AS [пол], 
+[moder].[почта] AS [почта], 
+[moder].[дата_рождения] AS [дата_рождения], 
+[moder].[страна] AS [страна], 
+[moder].[телефон] AS [телефон], 
+[moder].[направление] AS [направление], 
+[moder].[мероприятие] AS [мероприятие], 
+[moder].[пароль] AS [пароль], 
+[moder].[фото] AS [фото]
+FROM [dbo].[moder] AS [moder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="organ" EntityType="Self.organ" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[organ].[ФИО] AS [ФИО], 
+[organ].[почта] AS [почта], 
+[organ].[дата_рождения] AS [дата_рождения], 
+[organ].[страна] AS [страна], 
+[organ].[телефон] AS [телефон], 
+[organ].[пароль] AS [пароль], 
+[organ].[фото] AS [фото], 
+[organ].[пол] AS [пол]
+FROM [dbo].[organ] AS [organ]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="participant" EntityType="Self.participant" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[participant].[ФИО] AS [ФИО], 
+[participant].[почта] AS [почта], 
+[participant].[дата_рождения] AS [дата_рождения], 
+[participant].[страна] AS [страна], 
+[participant].[телефон] AS [телефон], 
+[participant].[пароль] AS [пароль], 
+[participant].[фото] AS [фото], 
+[participant].[пол] AS [пол]
+FROM [dbo].[participant] AS [participant]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="СеменовModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="contry">
+          <Key>
+            <PropertyRef Name="название" />
+            <PropertyRef Name="названиеАнгл" />
+            <PropertyRef Name="код" />
+            <PropertyRef Name="код2" />
+          </Key>
+          <Property Name="название" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="названиеАнгл" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="код" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="код2" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="C_" />
+            <PropertyRef Name="событие" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="days" />
+            <PropertyRef Name="город" />
+          </Key>
+          <Property Name="C_" Type="Int32" Nullable="false" />
+          <Property Name="событие" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="days" Type="Int32" Nullable="false" />
+          <Property Name="город" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="juri">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="пол" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="направление" />
+            <PropertyRef Name="пароль" />
+          </Key>
+          <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="страна" Type="Int32" Nullable="false" />
+          <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="направление" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="moder">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="пол" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="направление" />
+            <PropertyRef Name="мероприятие" />
+            <PropertyRef Name="пароль" />
+          </Key>
+          <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="страна" Type="Int32" Nullable="false" />
+          <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="направление" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="мероприятие" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="organ">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="пароль" />
+            <PropertyRef Name="пол" />
+          </Key>
+          <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="страна" Type="Int32" Nullable="false" />
+          <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="participant">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="почта" />
+            <PropertyRef Name="дата_рождения" />
+            <PropertyRef Name="страна" />
+            <PropertyRef Name="телефон" />
+            <PropertyRef Name="пароль" />
+            <PropertyRef Name="пол" />
+          </Key>
+          <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="почта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="дата_рождения" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="страна" Type="Int32" Nullable="false" />
+          <Property Name="телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="фото" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="пол" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="contry" EntityType="Self.contry" />
+          <EntitySet Name="event" EntityType="Self.event" />
+          <EntitySet Name="juri" EntityType="Self.juri" />
+          <EntitySet Name="moder" EntityType="Self.moder" />
+          <EntitySet Name="organ" EntityType="Self.organ" />
+          <EntitySet Name="participant" EntityType="Self.participant" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище СеменовModelContainer" CdmEntityContainer="Entities3">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="СеменовModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contry">
+            <EntityTypeMapping TypeName="СеменовModel.contry">
+              <MappingFragment StoreEntitySet="contry">
+                <ScalarProperty Name="название" ColumnName="название" />
+                <ScalarProperty Name="названиеАнгл" ColumnName="названиеАнгл" />
+                <ScalarProperty Name="код" ColumnName="код" />
+                <ScalarProperty Name="код2" ColumnName="код2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="event">
+            <EntityTypeMapping TypeName="СеменовModel.event">
+              <MappingFragment StoreEntitySet="event">
+                <ScalarProperty Name="C_" ColumnName="№" />
+                <ScalarProperty Name="событие" ColumnName="событие" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="days" ColumnName="days" />
+                <ScalarProperty Name="город" ColumnName="город" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="juri">
+            <EntityTypeMapping TypeName="СеменовModel.juri">
+              <MappingFragment StoreEntitySet="juri">
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="пол" ColumnName="пол" />
+                <ScalarProperty Name="почта" ColumnName="почта" />
+                <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+                <ScalarProperty Name="страна" ColumnName="страна" />
+                <ScalarProperty Name="телефон" ColumnName="телефон" />
+                <ScalarProperty Name="направление" ColumnName="направление" />
+                <ScalarProperty Name="пароль" ColumnName="пароль" />
+                <ScalarProperty Name="фото" ColumnName="фото" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="moder">
+            <EntityTypeMapping TypeName="СеменовModel.moder">
+              <MappingFragment StoreEntitySet="moder">
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="пол" ColumnName="пол" />
+                <ScalarProperty Name="почта" ColumnName="почта" />
+                <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+                <ScalarProperty Name="страна" ColumnName="страна" />
+                <ScalarProperty Name="телефон" ColumnName="телефон" />
+                <ScalarProperty Name="направление" ColumnName="направление" />
+                <ScalarProperty Name="мероприятие" ColumnName="мероприятие" />
+                <ScalarProperty Name="пароль" ColumnName="пароль" />
+                <ScalarProperty Name="фото" ColumnName="фото" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="organ">
+            <EntityTypeMapping TypeName="СеменовModel.organ">
+              <MappingFragment StoreEntitySet="organ">
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="почта" ColumnName="почта" />
+                <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+                <ScalarProperty Name="страна" ColumnName="страна" />
+                <ScalarProperty Name="телефон" ColumnName="телефон" />
+                <ScalarProperty Name="пароль" ColumnName="пароль" />
+                <ScalarProperty Name="фото" ColumnName="фото" />
+                <ScalarProperty Name="пол" ColumnName="пол" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="participant">
+            <EntityTypeMapping TypeName="СеменовModel.participant">
+              <MappingFragment StoreEntitySet="participant">
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="почта" ColumnName="почта" />
+                <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+                <ScalarProperty Name="страна" ColumnName="страна" />
+                <ScalarProperty Name="телефон" ColumnName="телефон" />
+                <ScalarProperty Name="пароль" ColumnName="пароль" />
+                <ScalarProperty Name="фото" ColumnName="фото" />
+                <ScalarProperty Name="пол" ColumnName="пол" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
